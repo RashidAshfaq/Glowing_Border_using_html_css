@@ -1,0 +1,48 @@
+body 
+{
+    padding: 0;
+    margin: 0;
+    background: black;
+}
+.block 
+{
+    margin: 10% auto 0;
+    width: 50%;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    color:whitesmoke;
+    background: linear-gradient(0deg, black,rgb(43,45,43));
+}
+
+.glow:before , .glow:after
+ {
+     position: absolute;
+     content: ' ';
+     left: -2px;
+     top: -2px;
+     background-size: 400%;
+     height: calc(100% + 5px);
+     width: calc(100% + 5px);
+     z-index: -1;
+     background: linear-gradient(45deg,#0066ea,#0ea,#566bca,#ffff00,#ff0000,#ff9933,#ff007f,#808080,#0000cc,#ff99ff);
+    animation: animate 20s linear infinite;
+    }
+   @keyframes animate {
+       0%
+       {
+           background-position: 0 0;
+       }
+       50%
+       {
+           background-position: 400% 0;
+       }
+       100%
+       {
+           background-position: 0 0;
+       }
+   } 
+   .glow:after
+{
+    filter: blur(35px);
+}
